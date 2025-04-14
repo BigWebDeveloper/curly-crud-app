@@ -1,12 +1,12 @@
 "use client";
-import React from "react";
 import { useGlobalContext } from "@context/globalContext";
 import { FaPen } from "react-icons/fa";
 import { CiCircleMore } from "react-icons/ci";
 import { useState } from "react";
 
-const Dropdown = () => {
-  const { isFolderEdit, isDropdownHome } = useGlobalContext();
+const Dropdown = (item) => {
+  const { title, handleDelete } = item;
+  const { isFolderEdit } = useGlobalContext();
   const [isDropdown, setIsDropdown] = useState(false);
   return (
     <div
@@ -16,7 +16,7 @@ const Dropdown = () => {
     >
       <CiCircleMore
         size={50}
-        className="p-[13px] text-[#c57f17] cursor-pointer"
+        className="p-[13px] orange cursor-pointer"
         onClick={() => setIsDropdown((prev) => !prev)}
       />
       <div
@@ -26,21 +26,24 @@ const Dropdown = () => {
         } w-38 group-hover:block rounded-md z-2 top-12 shadow-2xl overflow-hidden right-0 absolute bg-white`}
         onClick={() => setIsDropdown(false)}
       >
-        <div className="flex p-2 py-3 px-4 hover:bg-[#bebebe] relative items-center justify-between">
+        <div className="flex p-2 py-3 px-4 hover:bg-[#bebebe] relative items-center cursor-pointer justify-between">
           <span>Rename</span>
           <span>
             <FaPen size={10} />
           </span>
           <hr className="absolute w-full bottom-0 left-0 border-[#bebebe]" />
         </div>
-        <div className="flex p-2 relative py-3 hover:bg-[#bebebe] px-4 items-center justify-between ">
+        <div className="flex p-2 relative py-3 hover:bg-[#bebebe] px-4 items-center cursor-pointer justify-between ">
           <span>Group by date</span>
           <span>
             <FaPen size={10} />
           </span>
           <hr className="absolute w-full bottom-0 border-[#bebebe] left-0" />
         </div>
-        <div className="flex p-2 relative py-3 hover:bg-[#bebebe] px-4 items-center justify-between ">
+        <div
+          className="flex p-2 relative py-3 hover:bg-[#bebebe] px-4 items-center cursor-pointer justify-between "
+          onClick={() => handleDelete(title)}
+        >
           <span>Delete</span>
           <span>
             <FaPen size={10} />

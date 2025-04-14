@@ -5,13 +5,12 @@ import { useParams } from "next/navigation";import { MdKeyboardArrowLeft } from 
 const Header = () => {
     const {setIsFolderEdit} = useGlobalContext()
     const {noteId} = useParams()
-    console.log(noteId);
   return (
-    <div className="flex items-center text-[#c57f17]">
+    <div className="flex items-center orange">
       <p><MdKeyboardArrowLeft size={25} /></p>
       <p
         onClick={() => setIsFolderEdit((prev) => !prev)}
-        className="flex text-[#c57f17] cursor-pointer ml-auto"
+        className="flex orange cursor-pointer ml-auto"
       >
         Edit
       </p>

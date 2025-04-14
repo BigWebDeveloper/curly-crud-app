@@ -6,21 +6,19 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 
 const page = () => {
   const {back} = useRouter();
-  console.log(back);
   const { setIsFolderEdit } = useGlobalContext();
   const { noteId } = useParams();
-  console.log(noteId);
   const [noteID, useNoteID] = useState(noteId);
   return (
     <div>
-      <div className="flex items-center text-[#c57f17]">
+      <div className="flex items-center orange">
         <p onClick={()=>back()} className="flex items-center cursor-pointer">
           <MdKeyboardArrowLeft size={25}/>
           <span>Folder</span>
         </p>
         <p
           onClick={() => setIsFolderEdit((prev) => !prev)}
-          className="flex text-[#c57f17] cursor-pointer ml-auto"
+          className="flex orange cursor-pointer ml-auto"
         >
           Edit
         </p>

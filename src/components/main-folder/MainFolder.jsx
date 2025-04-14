@@ -15,8 +15,6 @@ import { store } from "@redux";
 const MainFolder = () => {
   const { isFolderEdit } = useGlobalContext();
 
-  console.log(store.getState());
-
   return (
     <div id="main" className="mb-auto grid gap-3 ">
       <p className="font-bold text-3xl">Folders</p>
@@ -38,7 +36,7 @@ const MainFolder = () => {
             href={`/`}
             className="relative flex gap-3 items-center hover:bg-[#bebebe] py-3 px-4"
           >
-            <IoFolderOutline size={20} className="text-[#c57f17]" />
+            <IoFolderOutline size={20} className="orange" />
             <p>Notes</p>
             <div className="ml-auto flex items-center">
               <p>14</p>
@@ -58,7 +56,7 @@ const MainFolder = () => {
                 className={`relative
               } flex gap-3 items-center overflow-hidden hover:bg-[#bebebe] py-3 px-4`}
               >
-                <IoFolderOutline size={20} className="text-[#c57f17]" />
+                <IoFolderOutline size={20} className="orange" />
                 <p className="" style={{ textTransform: "capitalize" }}>
                   {items.title}
                 </p>

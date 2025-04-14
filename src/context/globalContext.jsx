@@ -7,6 +7,8 @@ const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
   const [isFolderEdit, setIsFolderEdit] = useState(false);
   const [isDropdownHome, setIsDropdownHome] = useState(true);
+  const [isNewFolder, setIsNewFolder] = useState(false);
+  const [isAddNote, setIsAddNote] = useState(false);
 
   return (
     <GlobalContext.Provider
@@ -15,6 +17,10 @@ export const GlobalProvider = ({ children }) => {
         setIsFolderEdit,
         isDropdownHome,
         setIsDropdownHome,
+        isNewFolder,
+        setIsNewFolder,
+        isAddNote,
+        setIsAddNote,
       }}
     >
       {children}

@@ -7,7 +7,6 @@ import { useParams } from "next/navigation";
 
 const MainPage = () => {
   const paramId = useParams();
-  console.log(paramId);
 
   return (
     <div>
